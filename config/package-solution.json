@@ -1,0 +1,11 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-react-unit-testing-client-side-solution",
+    "id": "7692abe3-55bc-427f-bb74-3277640cf821",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-react-unit-testing.sppkg"
+  }
+}
