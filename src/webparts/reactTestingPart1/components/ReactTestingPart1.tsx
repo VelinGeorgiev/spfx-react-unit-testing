@@ -1,12 +1,12 @@
 import * as React from 'react';
-import styles from './SpFxChromeDebugging.module.scss';
-import { ISpFxChromeDebuggingProps } from './ISpFxChromeDebuggingProps';
+import styles from './ReactTestingPart1.module.scss';
+import { IReactTestingPart1Props } from './IReactTestingPart1Props';
 import { escape } from '@microsoft/sp-lodash-subset';
 
-export default class SpFxChromeDebugging extends React.Component<ISpFxChromeDebuggingProps, {}> {
-  public render(): React.ReactElement<ISpFxChromeDebuggingProps> {
+export default class ReactTestingPart1 extends React.Component<IReactTestingPart1Props, {}> {
+  public render(): React.ReactElement<IReactTestingPart1Props> {
     return (
-      <div className={styles.spFxChromeDebugging}>
+      <div className={styles.reactTestingPart1}>
         <div className={styles.container}>
           <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
             <div className="ms-Grid-col ms-lg10 ms-xl8 ms-xlPush2 ms-lgPush1">

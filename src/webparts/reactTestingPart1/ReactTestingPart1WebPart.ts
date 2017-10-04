@@ -7,19 +7,19 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
-import * as strings from 'SpFxChromeDebuggingWebPartStrings';
-import SpFxChromeDebugging from './components/SpFxChromeDebugging';
-import { ISpFxChromeDebuggingProps } from './components/ISpFxChromeDebuggingProps';
+import * as strings from 'ReactTestingPart1WebPartStrings';
+import ReactTestingPart1 from './components/ReactTestingPart1';
+import { IReactTestingPart1Props } from './components/IReactTestingPart1Props';
 
-export interface ISpFxChromeDebuggingWebPartProps {
+export interface IReactTestingPart1WebPartProps {
   description: string;
 }
 
-export default class SpFxChromeDebuggingWebPart extends BaseClientSideWebPart<ISpFxChromeDebuggingWebPartProps> {
+export default class ReactTestingPart1WebPart extends BaseClientSideWebPart<IReactTestingPart1WebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<ISpFxChromeDebuggingProps > = React.createElement(
-      SpFxChromeDebugging,
+    const element: React.ReactElement<IReactTestingPart1Props > = React.createElement(
+      ReactTestingPart1,
       {
         description: this.properties.description
       }

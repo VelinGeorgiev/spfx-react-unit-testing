@@ -2,17 +2,17 @@
   "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    "sp-fx-chrome-debugging-web-part": {
+    "react-testing-part-1-web-part": {
       "components": [
         {
-          "entrypoint": "./lib/webparts/spFxChromeDebugging/SpFxChromeDebuggingWebPart.js",
-          "manifest": "./src/webparts/spFxChromeDebugging/SpFxChromeDebuggingWebPart.manifest.json"
+          "entrypoint": "./lib/webparts/reactTestingPart1/ReactTestingPart1WebPart.js",
+          "manifest": "./src/webparts/reactTestingPart1/ReactTestingPart1WebPart.manifest.json"
         }
       ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "SpFxChromeDebuggingWebPartStrings": "lib/webparts/spFxChromeDebugging/loc/{locale}.js"
+    "ReactTestingPart1WebPartStrings": "lib/webparts/reactTestingPart1/loc/{locale}.js"
   }
 }
