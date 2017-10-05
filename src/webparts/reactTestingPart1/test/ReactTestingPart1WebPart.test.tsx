@@ -12,7 +12,7 @@ describe('ReactTestingPart1WebPart', () => {
   let reactComponent: ReactWrapper;
 
   /**
-   * Before the tests run.
+   * Before the tests run. 
    */
   before(() => {
 
@@ -24,7 +24,7 @@ describe('ReactTestingPart1WebPart', () => {
     ));
 
     // Alternativly rename the current file from .ts to .tsx and mount in an HTML/XML fashion.
-    // let reactComponent = mount(<ReactTestingPart1 description="test" />);
+    // reactComponent = mount(<ReactTestingPart1 description="test" />);
   });
 
 
@@ -35,7 +35,7 @@ describe('ReactTestingPart1WebPart', () => {
 
     // Find the elemet using css selector.
     let element: ReactWrapper<React.AllHTMLAttributes<{}>> = reactComponent.find(cssSelector);
-    
+
     expect(element).to.exist;
   });
 });
