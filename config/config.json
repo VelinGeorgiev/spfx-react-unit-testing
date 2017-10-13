@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/reactTestingPart1/ReactTestingPart1WebPart.manifest.json"
         }
       ]
+    },
+    "react-testing-part-2-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reactTestingPart2/ReactTestingPart2WebPart.js",
+          "manifest": "./src/webparts/reactTestingPart2/ReactTestingPart2WebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "ReactTestingPart1WebPartStrings": "lib/webparts/reactTestingPart1/loc/{locale}.js"
+    "ReactTestingPart1WebPartStrings": "lib/webparts/reactTestingPart1/loc/{locale}.js",
+    "ReactTestingPart2WebPartStrings": "lib/webparts/reactTestingPart2/loc/{locale}.js"
   }
 }

@@ -7,6 +7,7 @@ import { mount, ReactWrapper } from "enzyme";
 
 import ReactTestingPart1 from '../components/ReactTestingPart1';
 
+// tslint:disable:no-unused-expression
 describe('ReactTestingPart1WebPart', () => {
 
   let reactComponent: ReactWrapper;
@@ -28,14 +29,14 @@ describe('ReactTestingPart1WebPart', () => {
   });
 
 
-  it('should welcome element exist', () => {
+  // it('should welcome element exist', () => {
 
-    // Define the css selector.
-    let cssSelector: string = '.ms-font-xl .ms-fontColor-white';
+  //   // Define the css selector.
+  //   let cssSelector: string = '.ms-font-xl .ms-fontColor-white';
 
-    // Find the elemet using css selector.
-    let element: ReactWrapper<React.AllHTMLAttributes<{}>> = reactComponent.find(cssSelector);
+  //   // Find the elemet using css selector.
+  //   let element: ReactWrapper<React.AllHTMLAttributes<{}>> = reactComponent.find(cssSelector);
 
-    expect(element).to.exist;
-  });
+  //   expect(element).to.exist;
+  // });
 });

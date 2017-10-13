@@ -2,7 +2,7 @@
 
 ## Summary
 
-Craft SharePoint Framework solutions based on TypeScript, Reactjs and create component unit tests to make your solution `regression less`. This SPFx solution sample is part of a few blogs I will create. It shows how React client side web part can be unit tested.
+Craft SharePoint Framework solutions based on TypeScript, Reactjs and create component unit tests to make your solution `regression less`. This SPFx solution sample is part of a few blogs I will create. It shows how React client side web part can be unit tested. Also would show that Test Driven Developement scenarios are possible with the SPFx as well as some coverage reporting provider out of the box.
 
 Here are the packages we would install in order to get started with SPFx React web part unit tests
 

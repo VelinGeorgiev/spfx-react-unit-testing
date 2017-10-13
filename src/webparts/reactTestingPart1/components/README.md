@@ -6,20 +6,21 @@ Here are the packages we would install in order to get started with SPFx React w
 
 ```
 ...
-  "devDependencies": {
+"devDependencies": {
     "@microsoft/sp-build-web": "~1.3.0",
     "@microsoft/sp-module-interfaces": "~1.3.0",
     "@microsoft/sp-webpart-workbench": "~1.3.0",
     "gulp": "~3.9.1",
     "@types/chai": ">=3.4.34 <3.6.0",
     "@types/mocha": ">=2.2.33 <2.6.0",
-    "@types/sinon": "2.3.3",
+    "@types/sinon": "1.16.36",
+    "sinon":"1.17.2",
     "@types/enzyme":"2.8.11",
     "chai-enzyme": "0.8.0",
-    "enzyme": "2.9.1",
-    "react-addons-test-utils": "15.6.0"
+    "enzyme": "2.8.0",
+    "react-addons-test-utils": "15.4.2"
   }
-....
+...
 ```
 
 That sample shows how SPFx React component can be mounted on Mocha before hook.
@@ -59,6 +60,9 @@ it('should welcome element exist', () => {
     expect(element).to.exist;
   });
 ```
+
+
+More at [https://blog.velingeorgiev.com/sharepoint-framework-unit-tests-react-setup](SharePoint Framework unit tests React setup by Velin Georgiev)
 
 
 
