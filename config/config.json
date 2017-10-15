@@ -17,11 +17,20 @@
           "manifest": "./src/webparts/reactTestingPart2/ReactTestingPart2WebPart.manifest.json"
         }
       ]
+    },
+    "react-testing-part-3-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reactTestingPart3/ReactTestingPart3WebPart.js",
+          "manifest": "./src/webparts/reactTestingPart3/ReactTestingPart3WebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "ReactTestingPart1WebPartStrings": "lib/webparts/reactTestingPart1/loc/{locale}.js",
-    "ReactTestingPart2WebPartStrings": "lib/webparts/reactTestingPart2/loc/{locale}.js"
+    "ReactTestingPart2WebPartStrings": "lib/webparts/reactTestingPart2/loc/{locale}.js",
+    "ReactTestingPart3WebPartStrings": "lib/webparts/reactTestingPart3/loc/{locale}.js"
   }
 }
