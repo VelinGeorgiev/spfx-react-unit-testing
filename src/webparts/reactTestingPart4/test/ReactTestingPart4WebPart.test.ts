@@ -53,6 +53,14 @@ describe('ReactTestingPart4WebPart', () => {
     expect(subtitle).to.be.equal("Ice cream flavours list.");
   });
 
+  it('should buy button be hidden', () => {
+    
+      let buyButton: ReactWrapper<React.AllHTMLAttributes<{}>>;
+      buyButton = reactComponent.find("#buyButton");
+  
+      expect(buyButton.length).to.be.equal(0);
+  });
+
   // SPFx unit tests WORKING WITH PROMISES
   // https://mochajs.org/#working-with-promises
   it('should flavours list promise be resolved with list of items', (done) => {
@@ -63,9 +71,7 @@ describe('ReactTestingPart4WebPart', () => {
       done();
 
     }, 100);
-
   });
-
 
   it('should selected flavour be Cherry', (done) => {
     
@@ -85,14 +91,6 @@ describe('ReactTestingPart4WebPart', () => {
         done();
   
     }, 100);
-  });
-
-  it('should buy button be hidden', () => {
-
-    let buyButton: ReactWrapper<React.AllHTMLAttributes<{}>>;
-    buyButton = reactComponent.find("#buyButton");
-
-    expect(buyButton.length).to.be.equal(0);
   });
 
   it('should buy button be visible after selection', (done) => {
