@@ -29,14 +29,15 @@ describe('ReactTestingPart1WebPart', () => {
   });
 
 
-  // it('should welcome element exist', () => {
+  it('should welcome element exist', () => {
 
-  //   // Define the css selector.
-  //   let cssSelector: string = '.ms-font-xl .ms-fontColor-white';
+    // Define the css selector.
+    let cssSelector: string = '.ms-font-xl .ms-fontColor-white';
+    
+    // Find the elemet using css selector.
+    let text: string;
+    text = reactComponent.find(cssSelector).text();
 
-  //   // Find the elemet using css selector.
-  //   let element: ReactWrapper<React.AllHTMLAttributes<{}>> = reactComponent.find(cssSelector);
-
-  //   expect(element).to.exist;
-  // });
+    expect(text.length).greaterThan(0);
+  });
 });

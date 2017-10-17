@@ -17,7 +17,7 @@ describe('ReactTestingPart2WebPart', () => {
    * Before the tests run. 
    */
   before(() => {
-    debugger;
+    //debugger;
 
     reactComponent = mount(React.createElement(
       ReactTestingPart2,
@@ -32,14 +32,15 @@ describe('ReactTestingPart2WebPart', () => {
 
 
   it('should welcome element exist', () => {
-    debugger;
+    //debugger;
     
     // Define the css selector.
     let cssSelector: string = '.ms-font-xl .ms-fontColor-white';
 
     // Find the elemet using css selector.
-    let element: ReactWrapper<React.AllHTMLAttributes<{}>> = reactComponent.find(cssSelector);
+    let text: string;
+    text = reactComponent.find(cssSelector).text();
 
-    expect(element).to.exist;
+    expect(text.length).greaterThan(0);
   });
 });
