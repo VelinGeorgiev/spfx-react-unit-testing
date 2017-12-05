@@ -5,27 +5,24 @@ import * as React from 'react';
 import { assert } from 'chai';
 import { mount, ReactWrapper } from "enzyme";
 
-import ReactTestingPart1 from '../components/ReactTestingPart1';
+import IceCreamComponent from '../components/IceCreamComponent';
+import { IceCreamFakeProvider } from '../iceCreamProviders/IceCreamFakeProvider';
+import { IIceCreamComponentProps } from '../components/IIceCreamComponentProps';
+import { IIceCreamComponentState } from '../components/IIceCreamComponentState';
 
-// tslint:disable:no-unused-expression
 describe('ReactTestingPart1WebPart', () => {
 
   let reactComponent: ReactWrapper;
 
-  /**
-   * Before the tests run. 
-   */
   before(() => {
 
     reactComponent = mount(React.createElement(
-      ReactTestingPart1,
+      IceCreamComponent,
       {
-        description: "test"
+        title: "Test title",
+        iceCreamProvider: new IceCreamFakeProvider()
       }
     ));
-
-    // Alternativly rename the current file from .ts to .tsx and mount in an HTML/XML fashion.
-    // reactComponent = mount(<ReactTestingPart1 description="test" />);
   });
 
 
@@ -38,6 +35,17 @@ describe('ReactTestingPart1WebPart', () => {
     let text: string;
     text = reactComponent.find(cssSelector).text();
 
-    expect(text.length).greaterThan(0);
+    assert.isAbove(text.length, 0);
+  });
+
+
+  it('should has SharePoint Patterns and Practices text after click', () => {
+    //debugger;
+    
+    reactComponent.find('a').simulate('click');
+
+    let welcomeText: string = reactComponent.find('.ms-font-xl .ms-fontColor-white').text();
+
+    assert.equal(welcomeText, "Welcome to SharePoint Patterns and Practices (PnP)!");
   });
 });

@@ -6,13 +6,12 @@ import { IIceCreamComponentState } from './IIceCreamComponentState';
 import { IceCream } from '../iceCreamProviders/IceCream';
 
 export default class IceCreamComponent extends React.Component<IIceCreamComponentProps, IIceCreamComponentState> {
-
-
   constructor(props: IIceCreamComponentProps) {
     super(props);
 
     this.state = {
       iceCreamFlavoursList: [],
+      quantity: 1,
       selectedIceCream: null,
       hasBoughtIceCream: false
     };
@@ -35,71 +34,78 @@ export default class IceCreamComponent extends React.Component<IIceCreamComponen
 
   public render(): React.ReactElement<IIceCreamComponentProps> {
     return (
-      <div className={styles.IceCreamWebPart}>
-        <div className={styles.container}>
-          <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
-            <div className="ms-Grid-col ms-lg10 ms-xl8 ms-xlPush2 ms-lgPush1">
-              <span className="ms-font-xl ms-fontColor-white">{this.props.title}</span>
-              <p className="ms-font-l ms-fontColor-white">Ice cream flavours list.</p>
-              <ul id="iceCreamFlavoursList">
-              {
-                this.state.iceCreamFlavoursList.map((item, index) => {
+      <div className={`ms-bgColor-themeDark ms-fontColor-white ${styles.padding}`} id="iceCreamComponent">
+        <span className="ms-font-xl ms-fontColor-white">{this.props.title}</span>
+        <p className="ms-font-l ms-fontColor-white">Ice cream flavours list.</p>
 
-                    return <li key={index} data-id={item.id}>
-                            
-                              <button className={styles.button} 
-                                 onClick={this.selectHandler.bind(this, item)} >
-                                 Select
-                              </button>
+        <ul id="iceCreamFlavoursList">
+          {
+            this.state.iceCreamFlavoursList.map((item, index) => {
 
-                              <span> {item.flavour}</span>
+              return <li key={index} data-id={item.id}>
 
-                           </li>;
-                })
-              }
-              </ul>
-              <p>Selected flavour:</p>
-              {this.state.selectedIceCream && 
+                <button className={styles.button} onClick={this.selectHandler.bind(this, item)}>
+                  Select
+                </button>
 
-                <div>
-                  
-                  <p id="selectedFlavour">{this.state.selectedIceCream.flavour}</p>
-                  
-                  <button className={styles.button} id="buyButton"
-                     onClick={this.buyHandler.bind(this, this.state.selectedIceCream.id)}>
-                     Buy it!
-                  </button>
+                <span> {item.flavour}</span>
 
-                </div>
-              }
+              </li>;
+            })
+          }
+        </ul>
 
-              {this.state.hasBoughtIceCream && <p>Success!</p>}
-            </div>
+        {this.state.selectedIceCream &&
+
+          <div>
+            <input type="number" value={this.state.quantity} onChange={this.quantityChangeHandler.bind(this)}/>
+
+            <button className={styles.button} id="buyButton" onClick={this.buyHandler.bind(this)}>
+              Buy {this.state.selectedIceCream.flavour}
+            </button>
           </div>
-        </div>
+        }
+
+        {this.state.hasBoughtIceCream && <p>Success!</p>}
       </div>
     );
   }
 
-  private selectHandler(iceCream: IceCream): void {
-    
+  public selectHandler(iceCream: IceCream): void {
+
     this.setState((prevState: IIceCreamComponentState, props: IIceCreamComponentProps): IIceCreamComponentState => {
       prevState.selectedIceCream = iceCream;
       prevState.hasBoughtIceCream = false;
       return prevState;
     });
-
   }
 
   public buyHandler(id: number): void {
     
+    if(this.isValid() == false) return;
+
     this.props.iceCreamProvider.buy(id).then(result => {
 
       this.setState((prevState: IIceCreamComponentState, props: IIceCreamComponentProps): IIceCreamComponentState => {
         prevState.hasBoughtIceCream = true;
         return prevState;
       });
-
     });
+  }
+
+  public quantityChangeHandler(event: React.ChangeEvent<any>) {
+    const inputValue = event.target.value
+    console.log(inputValue);
+
+    this.setState((prevState: IIceCreamComponentState, props: IIceCreamComponentProps): IIceCreamComponentState => {
+      prevState.quantity = inputValue;
+      return prevState;
+    });
+  }
+
+  private isValid(): boolean {
+    return this.state.selectedIceCream 
+      && this.state.selectedIceCream.id > 0 
+      && this.state.quantity > 0;
   }
 }

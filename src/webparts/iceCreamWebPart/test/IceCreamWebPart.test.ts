@@ -8,29 +8,23 @@ import { IceCreamFakeProvider } from '../iceCreamProviders/IceCreamFakeProvider'
 import { IIceCreamComponentProps } from '../components/IIceCreamComponentProps';
 import { IIceCreamComponentState } from '../components/IIceCreamComponentState';
 
-// git mocha.timeout(0);
+// mocha.timeout(0);
 
-describe('IceCreamWebPartWebPart', () => {
+describe('IceCreamComponent', () => {
 
 
   let reactComponent: ReactWrapper<IIceCreamComponentProps, IIceCreamComponentState>;
-  
-    /**
-     * Before the tests run. 
-     */
-    beforeEach(() => {
-  
-      reactComponent = mount(React.createElement(
-        IceCreamWebPart,
-        {
-          title: "Test title",
-          iceCreamProvider: new IceCreamFakeProvider()
-        }
-      ));
-  
-      // Alternativly rename the current file from .ts to .tsx and mount in an HTML/XML fashion.
-      // reactComponent = mount(<ReactTestingPart2 description="test" />);
-    });
+
+  beforeEach(() => {
+
+    reactComponent = mount(React.createElement(
+      IceCreamComponent,
+      {
+        title: "Test title",
+        iceCreamProvider: new IceCreamFakeProvider()
+      }
+    ));
+  });
 
   it('should has test title is the props', () => {
 
@@ -45,7 +39,7 @@ describe('IceCreamWebPartWebPart', () => {
   });
 
   it('should has subtitle', () => {
-    
+
     let cssSelector: string = ".ms-font-l .ms-fontColor-white";
 
     let subtitle: string = reactComponent.find(cssSelector).text();
@@ -54,11 +48,11 @@ describe('IceCreamWebPartWebPart', () => {
   });
 
   it('should buy button be hidden', () => {
-    
-      let buyButton: ReactWrapper<React.AllHTMLAttributes<{}>>;
-      buyButton = reactComponent.find("#buyButton");
-  
-      expect(buyButton.length).to.be.equal(0);
+
+    let buyButton: ReactWrapper<React.AllHTMLAttributes<{}>>;
+    buyButton = reactComponent.find("#buyButton");
+
+    expect(buyButton.length).to.be.equal(0);
   });
 
   // SPFx unit tests WORKING WITH PROMISES
@@ -74,41 +68,41 @@ describe('IceCreamWebPartWebPart', () => {
   });
 
   it('should selected flavour be Cherry', (done) => {
-    
+
     setTimeout(() => {
 
-        let selectButton: ReactWrapper<React.AllHTMLAttributes<{}>>;
-        //button = reactComponent.find("#iceCreamFlavoursList").find("button").first();
-        selectButton = reactComponent.find("#iceCreamFlavoursList button").first();
-        
-        selectButton.simulate("click");
-      
-        let selectedFlavourText: string = reactComponent.find("#selectedFlavour").text();
-        expect(selectedFlavourText).to.be.equal("Cherry");
+      let selectButton: ReactWrapper<React.AllHTMLAttributes<{}>>;
+      //button = reactComponent.find("#iceCreamFlavoursList").find("button").first();
+      selectButton = reactComponent.find("#iceCreamFlavoursList button").first();
 
-        expect(reactComponent.state().selectedIceCream.flavour).to.be.equal("Cherry");
+      selectButton.simulate("click");
 
-        done();
-  
+      let selectedFlavourText: string = reactComponent.find("#selectedFlavour").text();
+      expect(selectedFlavourText).to.be.equal("Cherry");
+
+      expect(reactComponent.state().selectedIceCream.flavour).to.be.equal("Cherry");
+
+      done();
+
     }, 100);
   });
 
   it('should buy button be visible after selection', (done) => {
-    
+
     setTimeout(() => {
-      
-        let selectButton: ReactWrapper<React.AllHTMLAttributes<{}>>;
-        selectButton = reactComponent.find("#iceCreamFlavoursList button").first();
-        
-        selectButton.simulate("click");
 
-        let buyButton: ReactWrapper<React.AllHTMLAttributes<{}>>;
-        buyButton = reactComponent.find("#buyButton");
+      let selectButton: ReactWrapper<React.AllHTMLAttributes<{}>>;
+      selectButton = reactComponent.find("#iceCreamFlavoursList button").first();
 
-        expect(buyButton.length).greaterThan(0);
+      selectButton.simulate("click");
 
-        done();
-  
+      let buyButton: ReactWrapper<React.AllHTMLAttributes<{}>>;
+      buyButton = reactComponent.find("#buyButton");
+
+      expect(buyButton.length).greaterThan(0);
+
+      done();
+
     }, 100);
   });
 });
