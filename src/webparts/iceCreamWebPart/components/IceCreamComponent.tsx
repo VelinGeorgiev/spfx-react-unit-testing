@@ -1,14 +1,14 @@
 import * as React from 'react';
-import styles from './ReactTestingPart4.module.scss';
-import { IReactTestingPart4Props } from './IReactTestingPart4Props';
+import styles from './IceCreamWebPart.module.scss';
+import { IIceCreamComponentProps } from './IIceCreamComponentProps';
 import { escape } from '@microsoft/sp-lodash-subset';
-import { IReactTestingPart4State } from './IReactTestingPart4State';
-import { IceCream } from '../iceCream/IceCream';
+import { IIceCreamComponentState } from './IIceCreamComponentState';
+import { IceCream } from '../iceCreamProviders/IceCream';
 
-export default class ReactTestingPart4 extends React.Component<IReactTestingPart4Props, IReactTestingPart4State> {
+export default class IceCreamComponent extends React.Component<IIceCreamComponentProps, IIceCreamComponentState> {
 
 
-  constructor(props: IReactTestingPart4Props) {
+  constructor(props: IIceCreamComponentProps) {
     super(props);
 
     this.state = {
@@ -24,7 +24,7 @@ export default class ReactTestingPart4 extends React.Component<IReactTestingPart
     this.props.iceCreamProvider.getAll().then((result: Array<IceCream>) => {
 
       // Update the iceCreamFlavoursList.
-      this.setState((prevState: IReactTestingPart4State, props: IReactTestingPart4Props): IReactTestingPart4State => {
+      this.setState((prevState: IIceCreamComponentState, props: IIceCreamComponentProps): IIceCreamComponentState => {
 
         prevState.iceCreamFlavoursList = result;
 
@@ -33,9 +33,9 @@ export default class ReactTestingPart4 extends React.Component<IReactTestingPart
     });
   }
 
-  public render(): React.ReactElement<IReactTestingPart4Props> {
+  public render(): React.ReactElement<IIceCreamComponentProps> {
     return (
-      <div className={styles.reactTestingPart4}>
+      <div className={styles.IceCreamWebPart}>
         <div className={styles.container}>
           <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
             <div className="ms-Grid-col ms-lg10 ms-xl8 ms-xlPush2 ms-lgPush1">
@@ -83,7 +83,7 @@ export default class ReactTestingPart4 extends React.Component<IReactTestingPart
 
   private selectHandler(iceCream: IceCream): void {
     
-    this.setState((prevState: IReactTestingPart4State, props: IReactTestingPart4Props): IReactTestingPart4State => {
+    this.setState((prevState: IIceCreamComponentState, props: IIceCreamComponentProps): IIceCreamComponentState => {
       prevState.selectedIceCream = iceCream;
       prevState.hasBoughtIceCream = false;
       return prevState;
@@ -95,7 +95,7 @@ export default class ReactTestingPart4 extends React.Component<IReactTestingPart
     
     this.props.iceCreamProvider.buy(id).then(result => {
 
-      this.setState((prevState: IReactTestingPart4State, props: IReactTestingPart4Props): IReactTestingPart4State => {
+      this.setState((prevState: IIceCreamComponentState, props: IIceCreamComponentProps): IIceCreamComponentState => {
         prevState.hasBoughtIceCream = true;
         return prevState;
       });

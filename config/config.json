@@ -2,44 +2,17 @@
   "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    "react-testing-part-1-web-part": {
+    "ice-cream-web-part": {
       "components": [
         {
-          "entrypoint": "./lib/webparts/reactTestingPart1/ReactTestingPart1WebPart.js",
-          "manifest": "./src/webparts/reactTestingPart1/ReactTestingPart1WebPart.manifest.json"
-        }
-      ]
-    },
-    "react-testing-part-2-web-part": {
-      "components": [
-        {
-          "entrypoint": "./lib/webparts/reactTestingPart2/ReactTestingPart2WebPart.js",
-          "manifest": "./src/webparts/reactTestingPart2/ReactTestingPart2WebPart.manifest.json"
-        }
-      ]
-    },
-    "react-testing-part-3-web-part": {
-      "components": [
-        {
-          "entrypoint": "./lib/webparts/reactTestingPart3/ReactTestingPart3WebPart.js",
-          "manifest": "./src/webparts/reactTestingPart3/ReactTestingPart3WebPart.manifest.json"
-        }
-      ]
-    },
-    "react-testing-part-4-web-part": {
-      "components": [
-        {
-          "entrypoint": "./lib/webparts/reactTestingPart4/ReactTestingPart4WebPart.js",
-          "manifest": "./src/webparts/reactTestingPart4/ReactTestingPart4WebPart.manifest.json"
+          "entrypoint": "./lib/webparts/iceCreamWebPart/IceCreamWebPart.js",
+          "manifest": "./src/webparts/iceCreamWebPart/IceCreamWebPart.manifest.json"
         }
       ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "ReactTestingPart1WebPartStrings": "lib/webparts/reactTestingPart1/loc/{locale}.js",
-    "ReactTestingPart2WebPartStrings": "lib/webparts/reactTestingPart2/loc/{locale}.js",
-    "ReactTestingPart3WebPartStrings": "lib/webparts/reactTestingPart3/loc/{locale}.js",
-    "ReactTestingPart4WebPartStrings": "lib/webparts/reactTestingPart4/loc/{locale}.js"
+    "IceCreamWebPartWebPartStrings": "lib/webparts/IceCreamWebPart/loc/{locale}.js"
   }
 }

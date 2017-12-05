@@ -2,7 +2,7 @@
 /// <reference types="enzyme" />
 
 import * as React from 'react';
-import { expect } from 'chai';
+import { assert } from 'chai';
 import { mount, ReactWrapper } from "enzyme";
 
 import ReactTestingPart1 from '../components/ReactTestingPart1';

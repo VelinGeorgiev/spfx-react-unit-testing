@@ -1,6 +1,6 @@
-import { IceCream } from "../iceCream/IceCream";
+import { IceCream } from "../iceCreamProviders/IceCream";
 
-export interface IReactTestingPart4State {
+export interface IIceCreamComponentState {
     selectedIceCream: IceCream;
     iceCreamFlavoursList: Array<IceCream>;
     hasBoughtIceCream: boolean;

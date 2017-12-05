@@ -3,17 +3,17 @@
 import * as React from 'react';
 import { expect } from 'chai';
 import { mount, ReactWrapper } from "enzyme";
-import ReactTestingPart4 from '../components/ReactTestingPart4';
-import { IceCreamFakeProvider } from '../iceCream/IceCreamFakeProvider';
-import { IReactTestingPart4Props } from '../components/IReactTestingPart4Props';
-import { IReactTestingPart4State } from '../components/IReactTestingPart4State';
+import IceCreamComponent from '../components/IceCreamComponent';
+import { IceCreamFakeProvider } from '../iceCreamProviders/IceCreamFakeProvider';
+import { IIceCreamComponentProps } from '../components/IIceCreamComponentProps';
+import { IIceCreamComponentState } from '../components/IIceCreamComponentState';
 
-mocha.timeout(0);
+// git mocha.timeout(0);
 
-describe('ReactTestingPart4WebPart', () => {
+describe('IceCreamWebPartWebPart', () => {
 
 
-  let reactComponent: ReactWrapper<IReactTestingPart4Props, IReactTestingPart4State>;
+  let reactComponent: ReactWrapper<IIceCreamComponentProps, IIceCreamComponentState>;
   
     /**
      * Before the tests run. 
@@ -21,7 +21,7 @@ describe('ReactTestingPart4WebPart', () => {
     beforeEach(() => {
   
       reactComponent = mount(React.createElement(
-        ReactTestingPart4,
+        IceCreamWebPart,
         {
           title: "Test title",
           iceCreamProvider: new IceCreamFakeProvider()

@@ -7,21 +7,23 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
-import * as strings from 'ReactTestingPart1WebPartStrings';
-import ReactTestingPart1 from './components/ReactTestingPart1';
-import { IReactTestingPart1Props } from './components/IReactTestingPart1Props';
+import * as strings from 'IceCreamWebPartWebPartStrings';
+import IceCreamWebPart from './components/IceCreamComponent';
+import { IIceCreamComponentProps } from './components/IIceCreamComponentProps';
+import { IceCreamFakeProvider } from './iceCreamProviders/IceCreamFakeProvider';
 
-export interface IReactTestingPart1WebPartProps {
+export interface IIceCreamWebPartWebPartProps {
   description: string;
 }
 
-export default class ReactTestingPart1WebPart extends BaseClientSideWebPart<IReactTestingPart1WebPartProps> {
+export default class IceCreamWebPartWebPart extends BaseClientSideWebPart<IIceCreamWebPartWebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<IReactTestingPart1Props > = React.createElement(
-      ReactTestingPart1,
+    const element: React.ReactElement<IIceCreamComponentProps > = React.createElement(
+      IceCreamWebPart,
       {
-        description: this.properties.description
+        title: "SharePoint Ice Cream Truck",
+        iceCreamProvider: new IceCreamFakeProvider()
       }
     );
 
