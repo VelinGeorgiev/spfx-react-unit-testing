@@ -35,8 +35,8 @@
     "@types/chai": ">=3.4.34 <3.6.0",
     "@types/mocha": ">=2.2.33 <2.6.0",
     "ajv": "~5.2.2",
-    "@types/sinon": "1.16.36",
-    "sinon": "1.17.2",
+    "@types/sinon": "2.3.6",
+    "sinon": "2.3.6",
     "@types/enzyme": "2.8.11",
     "enzyme": "2.8.0",
     "react-addons-test-utils": "15.4.2"

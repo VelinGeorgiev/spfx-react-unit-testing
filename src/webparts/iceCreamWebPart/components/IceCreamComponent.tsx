@@ -40,6 +40,7 @@ export default class IceCreamComponent extends React.Component<IIceCreamComponen
 
         <ul id="iceCreamFlavoursList">
           {
+            this.state.iceCreamFlavoursList &&
             this.state.iceCreamFlavoursList.map((item, index) => {
 
               return <li key={index}>
