@@ -68,3 +68,4 @@ describe('Sinon spy', () => {
     assert(selectHandlerSpy.calledTwice);
   });
 });
+// http://sinonjs.org/

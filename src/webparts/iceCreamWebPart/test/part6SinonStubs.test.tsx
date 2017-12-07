@@ -112,3 +112,5 @@ describe('Sinon stubs', () => {
     }, 10);
   });
 });
+// http://sinonjs.org/
+

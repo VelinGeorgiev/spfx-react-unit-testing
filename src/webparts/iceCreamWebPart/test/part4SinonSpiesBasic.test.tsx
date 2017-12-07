@@ -37,3 +37,4 @@ describe('Sinon basic spy', () => {
     assert(multiplyByTwoSpy.returned(4));
   });
 });
+// http://sinonjs.org/

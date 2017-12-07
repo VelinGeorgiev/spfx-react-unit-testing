@@ -59,5 +59,3 @@ describe('Promises basics', () => {
       }, 10);
     });
 });
-// https://reactjs.org/docs/test-renderer.html
-// https://github.com/airbnb/enzyme
