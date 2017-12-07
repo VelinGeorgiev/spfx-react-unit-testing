@@ -42,13 +42,13 @@ export default class IceCreamComponent extends React.Component<IIceCreamComponen
           {
             this.state.iceCreamFlavoursList.map((item, index) => {
 
-              return <li key={index} data-id={item.id}>
+              return <li key={index}>
 
                 <button className={styles.button} onClick={this.selectHandler.bind(this, item)}>
                   Select
                 </button>
 
-                <span> {item.flavour}</span>
+                <span className={styles.flavourLabel}> {item.flavour}</span>
 
               </li>;
             })
@@ -57,11 +57,15 @@ export default class IceCreamComponent extends React.Component<IIceCreamComponen
 
         {this.state.selectedIceCream &&
 
-          <div>
-            <input type="number" value={this.state.quantity} onChange={this.quantityChangeHandler.bind(this)}/>
+          <div id="buyForm">
+            <input type="number" value={this.state.quantity} onChange={this.quantityChangeHandler.bind(this)} />
 
             <button className={styles.button} id="buyButton" onClick={this.buyHandler.bind(this)}>
               Buy {this.state.selectedIceCream.flavour}
+            </button>
+
+            <button className={styles.button} id="buyButton" onClick={this.multiply.bind(this)}>
+              Miltiply
             </button>
           </div>
         }
@@ -81,8 +85,8 @@ export default class IceCreamComponent extends React.Component<IIceCreamComponen
   }
 
   public buyHandler(id: number): void {
-    
-    if(this.isValid() == false) return;
+
+    if (this.isValid() == false) return;
 
     this.props.iceCreamProvider.buy(id).then(result => {
 
@@ -93,9 +97,16 @@ export default class IceCreamComponent extends React.Component<IIceCreamComponen
     });
   }
 
+  public multiply(): void {
+
+    this.setState((prevState: IIceCreamComponentState, props: IIceCreamComponentProps): IIceCreamComponentState => {
+      prevState.quantity = this.props.multiplier.multiply(prevState.quantity);
+      return prevState;
+    });
+  }
+
   public quantityChangeHandler(event: React.ChangeEvent<any>) {
-    const inputValue = event.target.value
-    console.log(inputValue);
+    const inputValue = event.target.value;
 
     this.setState((prevState: IIceCreamComponentState, props: IIceCreamComponentProps): IIceCreamComponentState => {
       prevState.quantity = inputValue;
@@ -104,8 +115,8 @@ export default class IceCreamComponent extends React.Component<IIceCreamComponen
   }
 
   private isValid(): boolean {
-    return this.state.selectedIceCream 
-      && this.state.selectedIceCream.id > 0 
+    return this.state.selectedIceCream
+      && this.state.selectedIceCream.id > 0
       && this.state.quantity > 0;
   }
 }

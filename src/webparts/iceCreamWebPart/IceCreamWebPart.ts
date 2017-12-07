@@ -11,6 +11,7 @@ import * as strings from 'IceCreamWebPartWebPartStrings';
 import IceCreamWebPart from './components/IceCreamComponent';
 import { IIceCreamComponentProps } from './components/IIceCreamComponentProps';
 import { IceCreamFakeProvider } from './iceCreamProviders/IceCreamFakeProvider';
+import IceCreamMultiplier from './IceCreamMultiplier';
 
 export interface IIceCreamWebPartWebPartProps {
   description: string;
@@ -23,7 +24,8 @@ export default class IceCreamWebPartWebPart extends BaseClientSideWebPart<IIceCr
       IceCreamWebPart,
       {
         title: "SharePoint Ice Cream Truck",
-        iceCreamProvider: new IceCreamFakeProvider()
+        iceCreamProvider: new IceCreamFakeProvider(),
+        multiplier: new IceCreamMultiplier()
       }
     );
 
