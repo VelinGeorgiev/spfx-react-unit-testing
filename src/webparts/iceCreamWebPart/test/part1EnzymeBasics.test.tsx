@@ -17,7 +17,7 @@ describe('Enzyme basics', () => {
 
   let reactComponent: ReactWrapper;
 
-  before(() => {
+  beforeEach(() => {
 
     reactComponent = mount(React.createElement(
       IceCreamComponent,

@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/iceCreamWebPart/IceCreamWebPart.manifest.json"
         }
       ]
+    },
+    "color-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/colorWebPart/ColorWebPartWebPart.js",
+          "manifest": "./src/webparts/colorWebPart/ColorWebPartWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "IceCreamWebPartWebPartStrings": "lib/webparts/IceCreamWebPart/loc/{locale}.js"
+    "IceCreamWebPartWebPartStrings": "lib/webparts/IceCreamWebPart/loc/{locale}.js",
+    "ColorWebPartWebPartStrings": "lib/webparts/colorWebPart/loc/{locale}.js"
   }
 }
